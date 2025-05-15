@@ -385,13 +385,20 @@
         }
         
         /* Meme Section */
-        .meme-container {
+        .meme-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 3rem 0;
+        }
+        
+        .meme-content {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 4rem;
-            margin: 3rem 0;
             flex-wrap: wrap;
+            max-width: 1000px;
         }
         
         .meme-image {
@@ -413,6 +420,7 @@
             flex: 1;
             min-width: 300px;
             max-width: 500px;
+            padding: 0 1rem;
         }
         
         .meme-text h3 {
@@ -428,6 +436,17 @@
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
+        }
+        
+        @media (max-width: 768px) {
+            .meme-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .meme-image, .meme-text {
+                text-align: center;
+            }
         }
         
         /* Community Section */
@@ -883,14 +902,16 @@
                 <p class="lead fade-in">Building wealth isn't just about finance — it's about having fun along the way.</p>
             </div>
             
-            <div class="meme-container">
-                <div class="meme-image fade-in">
-                    <img src="assets/to-the-moon.png" alt="Chango riding a rocket to the moon" class="bounce">
-                </div>
-                <div class="meme-text fade-in delay-1">
-                    <h3>Not just a meme coin. A <span class="accent">movement</span>.</h3>
-                    <p>While other projects promise the moon, Chango is already on his way there. With laser eyes locked on the target and riding the Solana rocket, nothing can stop this golden piggy from bringing $CHANGE to the masses.</p>
-                    <a href="#" class="secondary-button mt-2">Share Meme</a>
+            <div class="meme-wrapper">
+                <div class="meme-content">
+                    <div class="meme-image fade-in">
+                        <img src="assets/to-the-moon.png" alt="Chango riding a rocket to the moon" class="bounce">
+                    </div>
+                    <div class="meme-text fade-in delay-1">
+                        <h3>Not just a meme coin. A <span class="accent">movement</span>.</h3>
+                        <p>While other projects promise the moon, Chango is already on his way there. With laser eyes locked on the target and riding the Solana rocket, nothing can stop this golden piggy from bringing $CHANGE to the masses.</p>
+                        <a href="#" class="secondary-button mt-2">Share Meme</a>
+                    </div>
                 </div>
             </div>
         </div>
