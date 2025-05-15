@@ -6,6 +6,7 @@
     <title>$CHANGE - Turn pocket change into legacy gains</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
         :root {
@@ -672,6 +673,26 @@
             
             .nav-links {
                 display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: var(--rich-black);
+                padding: 1rem;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+                background: none;
+                border: none;
+                color: var(--white);
+                font-size: 1.5rem;
+                cursor: pointer;
             }
             
             .roadmap-line {
@@ -703,6 +724,12 @@
             }
         }
         
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+        
         /* Animations */
         @keyframes pulse {
             0% { transform: scale(1); }
@@ -714,19 +741,42 @@
             animation: pulse 2s infinite ease-in-out;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
         .fade-in {
             opacity: 0;
-            animation: fadeIn 1s forwards;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
         }
         
-        .delay-1 { animation-delay: 0.3s; }
-        .delay-2 { animation-delay: 0.6s; }
-        .delay-3 { animation-delay: 0.9s; }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--gold);
+            color: var(--rich-black);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+        }
+        
+        .back-to-top.visible {
+            display: block;
+        }
+        
+        /* Focus Styles for Accessibility */
+        a:focus, button:focus {
+            outline: 2px solid var(--gold);
+            outline-offset: 2px;
+        }
     </style>
 </head>
 <body>
@@ -734,9 +784,10 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="assets/chango-logo.png" alt="Chango Logo"> 
+                    <img src="assets/chango-logo.png" alt="Chango Logo">
                     <span class="logo-text">$CHANGE</span>
                 </div>
+                <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
                 <nav class="nav-links">
                     <a href="#features">Features</a>
                     <a href="#tokenomics">Tokenomics</a>
@@ -760,7 +811,7 @@
                         <a href="#features" class="secondary-button">Learn More</a>
                     </div>
                 </div>
-                <div class="hero-image fade-in delay-1">
+                <div class="hero-image fade-in">
                     <div class="glow"></div>
                     <img src="assets/chango-logo.png" alt="Chango, the golden piggy bank with laser eyes">
                 </div>
@@ -782,7 +833,7 @@
                     <p>Built on Solana's high-performance blockchain, $CHANGE transactions complete in seconds with minimal fees.</p>
                 </div>
                 
-                <div class="feature-card fade-in delay-1">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">
                         <i class="fas fa-users"></i>
                     </div>
@@ -790,7 +841,7 @@
                     <p>No VCs, no pre-sales. $CHANGE is owned by the community from day one. True decentralization as it should be.</p>
                 </div>
                 
-                <div class="feature-card fade-in delay-2">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
@@ -798,7 +849,7 @@
                     <p>Liquidity locked. Contract renounced. Built by crypto veterans who've been through the cycles.</p>
                 </div>
                 
-                <div class="feature-card fade-in delay-3">
+                <div class="feature-card fade-in">
                     <div class="feature-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
@@ -822,17 +873,17 @@
                     <div class="token-stat-label">Total Supply</div>
                 </div>
                 
-                <div class="token-stat fade-in delay-1">
+                <div class="token-stat fade-in">
                     <div class="token-stat-value">60%</div>
                     <div class="token-stat-label">Initial Liquidity</div>
                 </div>
                 
-                <div class="token-stat fade-in delay-2">
+                <div class="token-stat fade-in">
                     <div class="token-stat-value">20%</div>
                     <div class="token-stat-label">Community Treasury</div>
                 </div>
                 
-                <div class="token-stat fade-in delay-3">
+                <div class="token-stat fade-in">
                     <div class="token-stat-value">0%</div>
                     <div class="token-stat-label">Team Allocation</div>
                 </div>
@@ -907,7 +958,7 @@
                     <div class="meme-image fade-in">
                         <img src="assets/to-the-moon.png" alt="Chango riding a rocket to the moon" class="bounce">
                     </div>
-                    <div class="meme-text fade-in delay-1">
+                    <div class="meme-text fade-in">
                         <h3>Not just a meme coin. A <span class="accent">movement</span>.</h3>
                         <p>While other projects promise the moon, Chango is already on his way there. With laser eyes locked on the target and riding the Solana rocket, nothing can stop this golden piggy from bringing $CHANGE to the masses.</p>
                         <a href="#" class="secondary-button mt-2">Share Meme</a>
@@ -935,21 +986,21 @@
                         <span class="community-name">Website</span>
                     </a>
                     
-                    <a href="#" class="community-link fade-in delay-1">
+                    <a href="#" class="community-link fade-in">
                         <div class="community-icon">
                             <i class="fab fa-twitter"></i>
                         </div>
                         <span class="community-name">Twitter</span>
                     </a>
                     
-                    <a href="#" class="community-link fade-in delay-2">
+                    <a href="#" class="community-link fade-in">
                         <div class="community-icon">
                             <i class="fab fa-telegram"></i>
                         </div>
                         <span class="community-name">Telegram</span>
                     </a>
                     
-                    <a href="#" class="community-link fade-in delay-3">
+                    <a href="#" class="community-link fade-in">
                         <div class="community-icon">
                             <i class="fab fa-discord"></i>
                         </div>
@@ -1008,18 +1059,47 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 $CHANGE. All rights reserved.</p>
+                <p>© 2025 $CHANGE. All rights reserved.</p>
                 <p class="text-muted mt-2">Disclaimer: $CHANGE is a meme token created for entertainment, community-building, and speculative use. It is not a registered security, investment product, or financial instrument. Participation is at your own risk. Do your own research (DYOR). No promises, just vibes and potential.</p>
             </div>
         </div>
     </footer>
 
+    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
     <script>
-        // Smooth scrolling for anchor links
+        // Mobile Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Fade-in Animations with Intersection Observer
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(element => observer.observe(element));
+
+        // Back to Top Button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTop.classList.toggle('visible', window.scrollY > 300);
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth Scrolling for Anchor Links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     window.scrollTo({
@@ -1029,28 +1109,9 @@
                 }
             });
         });
-        
-        // Fade in animations on scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const fadeInOnScroll = () => {
-            fadeElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementTop < windowHeight - 100) {
-                    element.style.opacity = '1';
-                }
-            });
-        };
-        
-        // Initial check and add scroll event
-        fadeInOnScroll();
-        window.addEventListener('scroll', fadeInOnScroll);
-        
-        // Header scroll effect
+
+        // Header Scroll Effect
         const header = document.querySelector('header');
-        
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
