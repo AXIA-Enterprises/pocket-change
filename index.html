@@ -40,11 +40,12 @@
         /* Typography */
         h1, h2, h3, h4 {
             font-weight: 700;
+            line-height: 1.3;
         }
         
         h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
             background: linear-gradient(to right, var(--gold), var(--solana-green));
             -webkit-background-clip: text;
             background-clip: text;
@@ -54,28 +55,29 @@
         
         h2 {
             font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             color: var(--gold);
         }
 
         h3 {
             font-size: 1.5rem;
             margin-top: 1.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             color: var(--white);
         }
         
         p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 1.1rem;
         }
         
         .lead {
             font-size: 1.4rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             color: var(--white);
             max-width: 800px;
             font-weight: 300;
+            line-height: 1.7;
         }
         
         .text-muted {
@@ -90,18 +92,18 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 2rem;
         }
         
         section {
-            padding: 5rem 0;
+            padding: 7rem 0;
             position: relative;
         }
         
         .divider {
             height: 1px;
             background: linear-gradient(to right, transparent, var(--gold), transparent);
-            margin: 4rem 0;
+            margin: 5rem 0;
             opacity: 0.5;
         }
         
@@ -147,7 +149,7 @@
         /* Navigation */
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             align-items: center;
         }
         
@@ -167,7 +169,7 @@
             background: linear-gradient(45deg, var(--miami-pink), var(--gold));
             color: var(--white);
             border: none;
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1.8rem;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
@@ -187,7 +189,8 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 80px;
+            padding-top: 100px;
+            padding-bottom: 50px;
             background-image: 
                 radial-gradient(circle at 10% 90%, rgba(255, 215, 0, 0.1) 0%, transparent 30%),
                 radial-gradient(circle at 90% 10%, rgba(0, 255, 163, 0.08) 0%, transparent 35%);
@@ -196,7 +199,7 @@
         .hero-content {
             display: flex;
             align-items: center;
-            gap: 4rem;
+            gap: 5rem;
             flex-wrap: wrap;
         }
         
@@ -211,6 +214,7 @@
             justify-content: center;
             position: relative;
             min-width: 300px;
+            margin-bottom: 2rem;
         }
         
         .hero-image img {
@@ -243,19 +247,21 @@
         .features {
             position: relative;
             overflow: hidden;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
         }
         
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 3rem;
+            margin-top: 4rem;
         }
         
         .feature-card {
             background-color: var(--charcoal-grey);
             border-radius: 15px;
-            padding: 2rem;
+            padding: 2.5rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -272,12 +278,12 @@
         .feature-icon {
             font-size: 2.5rem;
             color: var(--gold);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .feature-title {
             font-size: 1.3rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             color: var(--gold);
         }
         
@@ -285,14 +291,15 @@
         .token-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 3rem;
+            margin-top: 4rem;
+            margin-bottom: 3rem;
         }
         
         .token-stat {
             background-color: var(--charcoal-grey);
             border-radius: 15px;
-            padding: 1.5rem;
+            padding: 2.5rem;
             text-align: center;
             border: 1px solid rgba(0, 255, 163, 0.1);
             transition: all 0.3s ease;
@@ -304,21 +311,21 @@
         }
         
         .token-stat-value {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
             color: var(--solana-green);
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
         }
         
         .token-stat-label {
             color: var(--light-grey);
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
         
         /* Roadmap Section */
         .roadmap-container {
             position: relative;
-            margin-top: 3rem;
+            margin-top: 5rem;
         }
         
         .roadmap-line {
@@ -334,7 +341,7 @@
         .roadmap-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 5rem;
+            margin-bottom: 7rem;
             position: relative;
         }
         
@@ -345,7 +352,7 @@
         .roadmap-content {
             width: 45%;
             background-color: var(--charcoal-grey);
-            padding: 2rem;
+            padding: 3rem;
             border-radius: 15px;
             position: relative;
             z-index: 2;
@@ -378,7 +385,7 @@
         
         .roadmap-title {
             color: var(--gold);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         .roadmap-empty {
@@ -390,14 +397,14 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            margin: 3rem 0;
+            margin: 5rem 0;
         }
         
         .meme-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 4rem;
+            gap: 5rem;
             flex-wrap: wrap;
             max-width: 1000px;
         }
@@ -407,6 +414,7 @@
             min-width: 300px;
             max-width: 500px;
             text-align: center;
+            margin-bottom: 2rem;
         }
         
         .meme-image img {
@@ -421,12 +429,12 @@
             flex: 1;
             min-width: 300px;
             max-width: 500px;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
         
         .meme-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 2rem;
             color: var(--white);
         }
         
@@ -439,30 +447,19 @@
             50% { transform: translateY(-15px); }
         }
         
-        @media (max-width: 768px) {
-            .meme-content {
-                flex-direction: column;
-                gap: 2rem;
-            }
-            
-            .meme-image, .meme-text {
-                text-align: center;
-            }
-        }
-        
         /* Community Section */
         .community-container {
             width: 100%;
             display: flex;
             justify-content: center;
-            margin: 3rem 0;
+            margin: 5rem 0;
         }
         
         .community-row {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 3rem;
+            gap: 4rem;
             max-width: 800px;
         }
         
@@ -472,7 +469,7 @@
             align-items: center;
             text-decoration: none;
             transition: all 0.3s ease;
-            width: 100px;
+            width: 120px;
             text-align: center;
         }
         
@@ -481,15 +478,15 @@
         }
         
         .community-icon {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: var(--charcoal-grey);
             border-radius: 50%;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
             color: var(--white);
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 215, 0, 0.2);
@@ -506,6 +503,7 @@
             font-weight: 500;
             width: 100%;
             text-align: center;
+            font-size: 1.1rem;
         }
         
         /* Call to Action */
@@ -513,8 +511,8 @@
             text-align: center;
             background: linear-gradient(135deg, rgba(31, 31, 31, 0.9), rgba(13, 13, 13, 0.9));
             border-radius: 20px;
-            padding: 4rem 2rem;
-            margin-top: 4rem;
+            padding: 5rem 3rem;
+            margin-top: 5rem;
             border: 1px solid rgba(255, 215, 0, 0.1);
             position: relative;
             overflow: hidden;
@@ -531,24 +529,24 @@
         }
         
         .cta h2 {
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .cta .lead {
-            margin: 0 auto 2.5rem;
+            margin: 0 auto 3rem;
         }
         
         .cta-buttons {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 2rem;
             flex-wrap: wrap;
         }
         
         .secondary-button {
             background-color: transparent;
             border: 2px solid var(--gold);
-            padding: 0.8rem 1.5rem;
+            padding: 0.9rem 1.8rem;
             border-radius: 50px;
             color: var(--gold);
             font-weight: 600;
@@ -565,7 +563,7 @@
         
         /* Footer */
         footer {
-            padding: 4rem 0 2rem;
+            padding: 6rem 0 3rem;
             background-color: rgba(0, 0, 0, 0.3);
             position: relative;
         }
@@ -575,7 +573,7 @@
             justify-content: space-between;
             align-items: flex-start;
             flex-wrap: wrap;
-            gap: 3rem;
+            gap: 4rem;
         }
         
         .footer-logo {
@@ -590,7 +588,7 @@
         
         .footer-title {
             color: var(--gold);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
             font-size: 1.3rem;
         }
         
@@ -599,13 +597,14 @@
         }
         
         .footer-nav li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1.2rem;
         }
         
         .footer-nav a {
             color: var(--light-grey);
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 1.05rem;
         }
         
         .footer-nav a:hover {
@@ -614,20 +613,20 @@
         
         .copyright {
             text-align: center;
-            margin-top: 4rem;
+            margin-top: 5rem;
             color: var(--light-grey);
             font-size: 0.9rem;
         }
         
         .socials {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         
         .social-icon {
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -650,11 +649,11 @@
         }
         
         .mb-2 {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
         
         .mt-2 {
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
         
         /* Media Queries */
@@ -679,7 +678,8 @@
                 left: 0;
                 right: 0;
                 background-color: var(--rich-black);
-                padding: 1rem;
+                padding: 1.5rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             }
             
             .nav-links.active {
@@ -706,6 +706,7 @@
             
             .roadmap-content {
                 width: 100%;
+                padding: 2rem;
             }
             
             .roadmap-empty {
@@ -720,7 +721,27 @@
             
             .hero-content {
                 flex-direction: column-reverse;
-                gap: 2rem;
+                gap: 3rem;
+            }
+            
+            section {
+                padding: 5rem 0;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+            }
+            
+            .feature-card, .token-stat, .roadmap-content {
+                padding: 2rem;
+            }
+            
+            .community-row {
+                gap: 2.5rem;
+            }
+            
+            .cta {
+                padding: 3rem 1.5rem;
             }
         }
         
@@ -755,8 +776,8 @@
         /* Back to Top Button */
         .back-to-top {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 30px;
+            right: 30px;
             background: var(--gold);
             color: var(--rich-black);
             border: none;
@@ -766,6 +787,7 @@
             cursor: pointer;
             display: none;
             z-index: 1000;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
         
         .back-to-top.visible {
@@ -946,30 +968,6 @@
 
     <div class="divider"></div>
 
-    <section id="meme">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="fade-in">Chango to the Moon!</h2>
-                <p class="lead fade-in">Building wealth isn't just about finance — it's about having fun along the way.</p>
-            </div>
-            
-            <div class="meme-wrapper">
-                <div class="meme-content">
-                    <div class="meme-image fade-in">
-                        <img src="assets/to-the-moon.png" alt="Chango riding a rocket to the moon" class="bounce">
-                    </div>
-                    <div class="meme-text fade-in">
-                        <h3>Not just a meme coin. A <span class="accent">movement</span>.</h3>
-                        <p>While other projects promise the moon, Chango is already on his way there. With laser eyes locked on the target and riding the Solana rocket, nothing can stop this golden piggy from bringing $CHANGE to the masses.</p>
-                        <a href="#" class="secondary-button mt-2">Share Meme</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="divider"></div>
-
     <section id="community">
         <div class="container">
             <div class="text-center">
@@ -1020,50 +1018,6 @@
             </div>
         </div>
     </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="logo">
-                        <img src="assets/chango-logo.png" alt="Chango Logo">
-                        <span class="logo-text">$CHANGE</span>
-                    </div>
-                    <p class="mt-2">$CHANGE is a meme token created for entertainment, community-building, and speculative use. It is not a registered security, investment product, or financial instrument.</p>
-                    <div class="socials">
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 class="footer-title">Quick Links</h4>
-                    <ul class="footer-nav">
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="#tokenomics">Tokenomics</a></li>
-                        <li><a href="#roadmap">Roadmap</a></li>
-                        <li><a href="#community">Community</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-links">
-                    <h4 class="footer-title">Resources</h4>
-                    <ul class="footer-nav">
-                        <li><a href="#">Whitepaper</a></li>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Contract</a></li>
-                        <li><a href="#">Audit</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                <p>© 2025 $CHANGE. All rights reserved.</p>
-                <p class="text-muted mt-2">Disclaimer: $CHANGE is a meme token created for entertainment, community-building, and speculative use. It is not a registered security, investment product, or financial instrument. Participation is at your own risk. Do your own research (DYOR). No promises, just vibes and potential.</p>
-            </div>
-        </div>
-    </footer>
 
     <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
 
