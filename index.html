@@ -384,13 +384,66 @@
             width: 45%;
         }
         
+        /* Meme Section */
+        .meme-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .meme-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            text-align: center;
+        }
+        
+        .meme-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .meme-text {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        
+        .meme-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+        
+        .bounce {
+            animation: bounce 8s infinite ease-in-out;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
         /* Community Section */
-        .community-links {
+        .community-container {
+            width: 100%;
             display: flex;
             justify-content: center;
-            gap: 2.5rem;
-            margin-top: 3rem;
+            margin: 3rem 0;
+        }
+        
+        .community-row {
+            display: flex;
+            justify-content: center;
             flex-wrap: wrap;
+            gap: 3rem;
+            max-width: 800px;
         }
         
         .community-link {
@@ -399,6 +452,8 @@
             align-items: center;
             text-decoration: none;
             transition: all 0.3s ease;
+            width: 100px;
+            text-align: center;
         }
         
         .community-link:hover {
@@ -429,6 +484,8 @@
         .community-name {
             color: var(--white);
             font-weight: 500;
+            width: 100%;
+            text-align: center;
         }
         
         /* Call to Action */
@@ -819,39 +876,65 @@
 
     <div class="divider"></div>
 
+    <section id="meme">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="fade-in">Chango to the Moon!</h2>
+                <p class="lead fade-in">Building wealth isn't just about finance — it's about having fun along the way.</p>
+            </div>
+            
+            <div class="meme-container">
+                <div class="meme-image fade-in">
+                    <img src="assets/to-the-moon.png" alt="Chango riding a rocket to the moon" class="bounce">
+                </div>
+                <div class="meme-text fade-in delay-1">
+                    <h3>Not just a meme coin. A <span class="accent">movement</span>.</h3>
+                    <p>While other projects promise the moon, Chango is already on his way there. With laser eyes locked on the target and riding the Solana rocket, nothing can stop this golden piggy from bringing $CHANGE to the masses.</p>
+                    <a href="#" class="secondary-button mt-2">Share Meme</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
     <section id="community">
         <div class="container">
-            <h2 class="text-center fade-in">Join the $CHANGE Revolution</h2>
-            <p class="lead text-center fade-in">This isn't just a coin. It's a call to action for the underdogs, the dreamers, and the meme warriors.</p>
+            <div class="text-center">
+                <h2 class="fade-in">Join the $CHANGE Revolution</h2>
+                <p class="lead fade-in">This isn't just a coin. It's a call to action for the underdogs, the dreamers, and the meme warriors.</p>
+            </div>
             
-            <div class="community-links">
-                <a href="https://pocketchange.money" class="community-link fade-in">
-                    <div class="community-icon">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <span class="community-name">Website</span>
-                </a>
-                
-                <a href="#" class="community-link fade-in delay-1">
-                    <div class="community-icon">
-                        <i class="fab fa-twitter"></i>
-                    </div>
-                    <span class="community-name">Twitter</span>
-                </a>
-                
-                <a href="#" class="community-link fade-in delay-2">
-                    <div class="community-icon">
-                        <i class="fab fa-telegram"></i>
-                    </div>
-                    <span class="community-name">Telegram</span>
-                </a>
-                
-                <a href="#" class="community-link fade-in delay-3">
-                    <div class="community-icon">
-                        <i class="fab fa-discord"></i>
-                    </div>
-                    <span class="community-name">Discord</span>
-                </a>
+            <div class="community-container">
+                <div class="community-row">
+                    <a href="https://pocketchange.money" class="community-link fade-in">
+                        <div class="community-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <span class="community-name">Website</span>
+                    </a>
+                    
+                    <a href="#" class="community-link fade-in delay-1">
+                        <div class="community-icon">
+                            <i class="fab fa-twitter"></i>
+                        </div>
+                        <span class="community-name">Twitter</span>
+                    </a>
+                    
+                    <a href="#" class="community-link fade-in delay-2">
+                        <div class="community-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <span class="community-name">Telegram</span>
+                    </a>
+                    
+                    <a href="#" class="community-link fade-in delay-3">
+                        <div class="community-icon">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <span class="community-name">Discord</span>
+                    </a>
+                </div>
             </div>
             
             <div class="cta">
