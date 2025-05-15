@@ -344,7 +344,10 @@
         .roadmap-container {
             position: relative;
             margin-top: 3rem;
+            margin-bottom: 5rem;
             text-align: center;
+            overflow: visible;
+            padding-bottom: 6rem;
         }
         
         .roadmap-line {
@@ -355,14 +358,20 @@
             width: 2px;
             background: linear-gradient(to bottom, var(--gold), var(--solana-green));
             z-index: 1;
+            height: 100%;
         }
         
         .roadmap-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 5rem;
+            margin-bottom: 7rem;
             position: relative;
             text-align: center;
+            z-index: 2;
+        }
+        
+        .roadmap-item:last-child {
+            margin-bottom: 0;
         }
         
         .roadmap-item:nth-child(odd) {
@@ -420,8 +429,10 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            margin: 3rem 0;
+            margin: 5rem 0;
             text-align: center;
+            clear: both;
+            position: relative;
         }
         
         .meme-content {
@@ -925,6 +936,24 @@
                     </div>
                     <div class="roadmap-empty"></div>
                 </div>
+                <div class="roadmap-content fade-in">
+                        <div class="roadmap-date">Q2 2025</div>
+                        <h3 class="roadmap-title">Launch Phase</h3>
+                        <p>Fair token launch on Solana. Community building. Initial DEX listings. Marketing partnerships.</p>
+                    </div>
+                    <div class="roadmap-empty"></div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content fade-in">
+                        <div class="roadmap-date">Q3 2025</div>
+                        <h3 class="roadmap-title">Growth Phase</h3>
+                        <p>Major CEX listings. Expanded marketing campaigns. First community governance votes. Chango NFT collection.</p>
+                    </div>
+                    <div class="roadmap-empty"></div>
+                </div>
+                
+                <div class="roadmap-item">
             </div>
         </div>
     </section>
@@ -1048,21 +1077,4 @@
     </script>
 </body>
 </html>
-                    <div class="roadmap-content fade-in">
-                        <div class="roadmap-date">Q2 2025</div>
-                        <h3 class="roadmap-title">Launch Phase</h3>
-                        <p>Fair token launch on Solana. Community building. Initial DEX listings. Marketing partnerships.</p>
-                    </div>
-                    <div class="roadmap-empty"></div>
-                </div>
-                
-                <div class="roadmap-item">
-                    <div class="roadmap-content fade-in">
-                        <div class="roadmap-date">Q3 2025</div>
-                        <h3 class="roadmap-title">Growth Phase</h3>
-                        <p>Major CEX listings. Expanded marketing campaigns. First community governance votes. Chango NFT collection.</p>
-                    </div>
-                    <div class="roadmap-empty"></div>
-                </div>
-                
-                <div class="roadmap-item">
+                    
