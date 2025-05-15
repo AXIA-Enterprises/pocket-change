@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$CHANGE - Turn pocket change into legacy gains</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --gold: #FFD700;
+            --solana-green: #00FFA3;
+            --miami-pink: #FF2E63;
+            --rich-black: #0D0D0D;
+            --charcoal-grey: #1F1F1F;
+            --white: #FFFFFF;
+            --light-grey: #B3B3B3;
+            --lime-mint: #2BFF88;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background-color: var(--rich-black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 163, 0.05) 0%, transparent 20%);
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, var(--gold), var(--solana-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .lead {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: var(--white);
+            max-width: 800px;
+            font-weight: 300;
+        }
+        
+        .text-muted {
+            color: var(--light-grey);
+        }
+        
+        .accent {
+            color: var(--solana-green);
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold), transparent);
+            margin: 4rem 0;
+            opacity: 0.5;
+        }
+        
+        /* Header */
+        header {
+            padding: 1.5rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            transition: all 0.3s ease;
+            background-color: rgba(13, 13, 13, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--gold), var(--solana-green));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+        
+        .cta-button {
+            background: linear-gradient(45deg, var(--miami-pink), var(--gold));
+            color: var(--white);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(255, 46, 99, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 46, 99, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background-image: 
+                radial-gradient(circle at 10% 90%, rgba(255, 215, 0, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 90% 10%, rgba(0, 255, 163, 0.08) 0%, transparent 35%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            min-width: 300px;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(0 10px 25px rgba(255, 215, 0, 0.3));
+            animation: float 6s ease-in-out infinite;
+            max-height: 400px;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 250px;
+            height: 250px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(30px);
+        }
+        
+        /* Features Section */
+        .features {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background-color: var(--charcoal-grey);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+        
+        /* Token Section */
+        .token-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .token-stat {
+            background-color: var(--charcoal-grey);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 163, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .token-stat:hover {
+            transform: translateY(-5px);
+            border: 1px solid rgba(0, 255, 163, 0.3);
+        }
+        
+        .token-stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--solana-green);
+            margin-bottom: 0.5rem;
+        }
+        
+        .token-stat-label {
+            color: var(--light-grey);
+            font-size: 1rem;
+        }
+        
+        /* Roadmap Section */
+        .roadmap-container {
+            position: relative;
+            margin-top: 3rem;
+        }
+        
+        .roadmap-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: calc(50% - 1px);
+            width: 2px;
+            background: linear-gradient(to bottom, var(--gold), var(--solana-green));
+            z-index: 1;
+        }
+        
+        .roadmap-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5rem;
+            position: relative;
+        }
+        
+        .roadmap-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .roadmap-content {
+            width: 45%;
+            background-color: var(--charcoal-grey);
+            padding: 2rem;
+            border-radius: 15px;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .roadmap-content:hover {
+            transform: translateY(-5px);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
+        }
+        
+        .roadmap-date {
+            width: 120px;
+            height: 40px;
+            background: linear-gradient(45deg, var(--gold), var(--solana-green));
+            color: var(--rich-black);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            font-weight: 700;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
+        
+        .roadmap-title {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+        
+        .roadmap-empty {
+            width: 45%;
+        }
+        
+        /* Community Section */
+        .community-links {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .community-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .community-link:hover {
+            transform: translateY(-5px);
+        }
+        
+        .community-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--charcoal-grey);
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            color: var(--white);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+        
+        .community-link:hover .community-icon {
+            background-color: var(--gold);
+            color: var(--rich-black);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .community-name {
+            color: var(--white);
+            font-weight: 500;
+        }
+        
+        /* Call to Action */
+        .cta {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(31, 31, 31, 0.9), rgba(13, 13, 13, 0.9));
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+            z-index: -1;
+        }
+        
+        .cta h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta .lead {
+            margin: 0 auto 2.5rem;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .secondary-button {
+            background-color: transparent;
+            border: 2px solid var(--gold);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            color: var(--gold);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .secondary-button:hover {
+            background-color: var(--gold);
+            color: var(--rich-black);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            padding: 4rem 0 2rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-title {
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer-nav {
+            list-style: none;
+        }
+        
+        .footer-nav li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-nav a {
+            color: var(--light-grey);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-nav a:hover {
+            color: var(--gold);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 4rem;
+            color: var(--light-grey);
+            font-size: 0.9rem;
+        }
+        
+        .socials {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--charcoal-grey);
+            border-radius: 50%;
+            color: var(--light-grey);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--gold);
+            color: var(--rich-black);
+            transform: translateY(-3px);
+        }
+        
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-2 {
+            margin-bottom: 2rem;
+        }
+        
+        .mt-2 {
+            margin-top: 2rem;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .lead {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .roadmap-line {
+                left: 20px;
+            }
+            
+            .roadmap-item, .roadmap-item:nth-child(odd) {
+                flex-direction: column;
+                padding-left: 50px;
+            }
+            
+            .roadmap-content {
+                width: 100%;
+            }
+            
+            .roadmap-empty {
+                display: none;
+            }
+            
+            .roadmap-date {
+                left: 20px;
+                top: 20px;
+                transform: none;
+            }
+            
+            .hero-content {
+                flex-direction: column-reverse;
+                gap: 2rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 0.9s; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="assets/chango-logo.png" alt="Chango Logo"> 
+                    <span class="logo-text">$CHANGE</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#tokenomics">Tokenomics</a>
+                    <a href="#roadmap">Roadmap</a>
+                    <a href="#community">Community</a>
+                    <a href="#" class="cta-button">Buy $CHANGE</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text fade-in">
+                    <h1>Turn pocket change into legacy gains.</h1>
+                    <p class="lead">In a world where banks give you nothing, and Wall Street hoards the profits, $CHANGE flips the game. It's a coin for the dreamers, the builders, and the broke college kids with ambition.</p>
+                    <p class="lead">You don't need a trust fund — you need $CHANGE.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="cta-button pulse">Get $CHANGE</a>
+                        <a href="#features" class="secondary-button">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image fade-in delay-1">
+                    <div class="glow"></div>
+                    <img src="assets/chango-logo.png" alt="Chango, the golden piggy bank with laser eyes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="text-center fade-in">Why $CHANGE Matters</h2>
+            <p class="lead text-center fade-in">Meet Chango — the golden piggy bank with laser eyes and a Solana medallion. He's not just a meme. He's the symbol of turning scraps into stacks.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Lightning Fast</h3>
+                    <p>Built on Solana's high-performance blockchain, $CHANGE transactions complete in seconds with minimal fees.</p>
+                </div>
+                
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Community Owned</h3>
+                    <p>No VCs, no pre-sales. $CHANGE is owned by the community from day one. True decentralization as it should be.</p>
+                </div>
+                
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Safe & Secure</h3>
+                    <p>Liquidity locked. Contract renounced. Built by crypto veterans who've been through the cycles.</p>
+                </div>
+                
+                <div class="feature-card fade-in delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="feature-title">Moon Potential</h3>
+                    <p>$CHANGE isn't just a token—it's a movement. Join the ride before Chango takes his laser eyes to the stratosphere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="tokenomics">
+        <div class="container">
+            <h2 class="text-center fade-in">$CHANGE Tokenomics</h2>
+            <p class="lead text-center fade-in">Simple, fair, and designed for sustainable growth.</p>
+            
+            <div class="token-info">
+                <div class="token-stat fade-in">
+                    <div class="token-stat-value">10B</div>
+                    <div class="token-stat-label">Total Supply</div>
+                </div>
+                
+                <div class="token-stat fade-in delay-1">
+                    <div class="token-stat-value">60%</div>
+                    <div class="token-stat-label">Initial Liquidity</div>
+                </div>
+                
+                <div class="token-stat fade-in delay-2">
+                    <div class="token-stat-value">20%</div>
+                    <div class="token-stat-label">Community Treasury</div>
+                </div>
+                
+                <div class="token-stat fade-in delay-3">
+                    <div class="token-stat-value">0%</div>
+                    <div class="token-stat-label">Team Allocation</div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-2">
+                <a href="#" class="secondary-button">View Contract</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="roadmap">
+        <div class="container">
+            <h2 class="text-center fade-in">The Road to $CHANGE</h2>
+            <p class="lead text-center fade-in">Our journey from pocket change to legacy gains has just begun.</p>
+            
+            <div class="roadmap-container">
+                <div class="roadmap-line"></div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content fade-in">
+                        <div class="roadmap-date">Q2 2025</div>
+                        <h3 class="roadmap-title">Launch Phase</h3>
+                        <p>Fair token launch on Solana. Community building. Initial DEX listings. Marketing partnerships.</p>
+                    </div>
+                    <div class="roadmap-empty"></div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content fade-in">
+                        <div class="roadmap-date">Q3 2025</div>
+                        <h3 class="roadmap-title">Growth Phase</h3>
+                        <p>Major CEX listings. Expanded marketing campaigns. First community governance votes. Chango NFT collection.</p>
+                    </div>
+                    <div class="roadmap-empty"></div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content fade-in">
+                        <div class="roadmap-date">Q4 2025</div>
+                        <h3 class="roadmap-title">Utility Phase</h3>
+                        <p>Launch of staking program. Development of $CHANGE wallet. Partnerships with DeFi platforms. Community grants program.</p>
+                    </div>
+                    <div class="roadmap-empty"></div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content fade-in">
+                        <div class="roadmap-date">Q1 2026</div>
+                        <h3 class="roadmap-title">Expansion Phase</h3>
+                        <p>Cross-chain bridges. Metaverse integration. Revolutionary DeFi products. Real-world partnerships.</p>
+                    </div>
+                    <div class="roadmap-empty"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section id="community">
+        <div class="container">
+            <h2 class="text-center fade-in">Join the $CHANGE Revolution</h2>
+            <p class="lead text-center fade-in">This isn't just a coin. It's a call to action for the underdogs, the dreamers, and the meme warriors.</p>
+            
+            <div class="community-links">
+                <a href="https://pocketchange.money" class="community-link fade-in">
+                    <div class="community-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <span class="community-name">Website</span>
+                </a>
+                
+                <a href="#" class="community-link fade-in delay-1">
+                    <div class="community-icon">
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                    <span class="community-name">Twitter</span>
+                </a>
+                
+                <a href="#" class="community-link fade-in delay-2">
+                    <div class="community-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <span class="community-name">Telegram</span>
+                </a>
+                
+                <a href="#" class="community-link fade-in delay-3">
+                    <div class="community-icon">
+                        <i class="fab fa-discord"></i>
+                    </div>
+                    <span class="community-name">Discord</span>
+                </a>
+            </div>
+            
+            <div class="cta">
+                <div class="cta-glow"></div>
+                <h2>Ready for $CHANGE?</h2>
+                <p class="lead">In a world that worships dollars and debt, we choose $CHANGE — because sometimes, a little can become a lot.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="cta-button">Buy Now</a>
+                    <a href="#" class="secondary-button">Join Community</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="assets/chango-logo.png" alt="Chango Logo">
+                        <span class="logo-text">$CHANGE</span>
+                    </div>
+                    <p class="mt-2">$CHANGE is a meme token created for entertainment, community-building, and speculative use. It is not a registered security, investment product, or financial instrument.</p>
+                    <div class="socials">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#tokenomics">Tokenomics</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#">Whitepaper</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Contract</a></li>
+                        <li><a href="#">Audit</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 $CHANGE. All rights reserved.</p>
+                <p class="text-muted mt-2">Disclaimer: $CHANGE is a meme token created for entertainment, community-building, and speculative use. It is not a registered security, investment product, or financial instrument. Participation is at your own risk. Do your own research (DYOR). No promises, just vibes and potential.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Fade in animations on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                }
+            });
+        };
+        
+        // Initial check and add scroll event
+        fadeInOnScroll();
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Header scroll effect
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+                header.style.backgroundColor = 'rgba(13, 13, 13, 0.95)';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.backgroundColor = 'rgba(13, 13, 13, 0.8)';
+            }
+        });
+    </script>
+</body>
+</html>
