@@ -6,7 +6,6 @@
     <title>$CHANGE - Turn pocket change into legacy gains</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
         :root {
@@ -35,17 +34,18 @@
             background-image: 
                 radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 30%),
                 radial-gradient(circle at 80% 80%, rgba(0, 255, 163, 0.05) 0%, transparent 20%);
+            text-align: center;
         }
         
         /* Typography */
         h1, h2, h3, h4 {
             font-weight: 700;
-            line-height: 1.3;
+            text-align: center;
         }
         
         h1 {
             font-size: 3.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             background: linear-gradient(to right, var(--gold), var(--solana-green));
             -webkit-background-clip: text;
             background-clip: text;
@@ -55,33 +55,39 @@
         
         h2 {
             font-size: 2.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--gold);
+            text-align: center;
         }
 
         h3 {
             font-size: 1.5rem;
             margin-top: 1.5rem;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1rem;
             color: var(--white);
+            text-align: center;
         }
         
         p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             font-size: 1.1rem;
+            text-align: center;
         }
         
         .lead {
             font-size: 1.4rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             color: var(--white);
             max-width: 800px;
             font-weight: 300;
-            line-height: 1.7;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
         
         .text-muted {
             color: var(--light-grey);
+            text-align: center;
         }
         
         .accent {
@@ -92,19 +98,22 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
+            text-align: center;
         }
         
         section {
-            padding: 7rem 0;
+            padding: 5rem 0;
             position: relative;
+            text-align: center;
         }
         
         .divider {
             height: 1px;
             background: linear-gradient(to right, transparent, var(--gold), transparent);
-            margin: 5rem 0;
+            margin: 4rem auto;
             opacity: 0.5;
+            width: 80%;
         }
         
         /* Header */
@@ -149,8 +158,9 @@
         /* Navigation */
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
             align-items: center;
+            justify-content: center;
         }
         
         .nav-links a {
@@ -169,7 +179,7 @@
             background: linear-gradient(45deg, var(--miami-pink), var(--gold));
             color: var(--white);
             border: none;
-            padding: 0.9rem 1.8rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
@@ -189,23 +199,27 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 100px;
-            padding-bottom: 50px;
+            justify-content: center;
+            padding-top: 80px;
             background-image: 
                 radial-gradient(circle at 10% 90%, rgba(255, 215, 0, 0.1) 0%, transparent 30%),
                 radial-gradient(circle at 90% 10%, rgba(0, 255, 163, 0.08) 0%, transparent 35%);
+            text-align: center;
         }
 
         .hero-content {
             display: flex;
             align-items: center;
-            gap: 5rem;
+            justify-content: center;
+            gap: 4rem;
             flex-wrap: wrap;
+            text-align: center;
         }
         
         .hero-text {
             flex: 1;
             min-width: 300px;
+            text-align: center;
         }
         
         .hero-image {
@@ -214,7 +228,6 @@
             justify-content: center;
             position: relative;
             min-width: 300px;
-            margin-bottom: 2rem;
         }
         
         .hero-image img {
@@ -247,26 +260,27 @@
         .features {
             position: relative;
             overflow: hidden;
-            padding-top: 8rem;
-            padding-bottom: 8rem;
+            text-align: center;
         }
         
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
         }
         
         .feature-card {
             background-color: var(--charcoal-grey);
             border-radius: 15px;
-            padding: 2.5rem;
+            padding: 2rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
             height: 100%;
             border: 1px solid rgba(255, 215, 0, 0.1);
+            text-align: center;
         }
         
         .feature-card:hover {
@@ -278,28 +292,30 @@
         .feature-icon {
             font-size: 2.5rem;
             color: var(--gold);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
         
         .feature-title {
             font-size: 1.3rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--gold);
+            text-align: center;
         }
         
         /* Token Section */
         .token-info {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-            margin-bottom: 3rem;
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
         }
         
         .token-stat {
             background-color: var(--charcoal-grey);
             border-radius: 15px;
-            padding: 2.5rem;
+            padding: 1.5rem;
             text-align: center;
             border: 1px solid rgba(0, 255, 163, 0.1);
             transition: all 0.3s ease;
@@ -311,21 +327,24 @@
         }
         
         .token-stat-value {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
             color: var(--solana-green);
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
         }
         
         .token-stat-label {
             color: var(--light-grey);
-            font-size: 1.1rem;
+            font-size: 1rem;
+            text-align: center;
         }
         
         /* Roadmap Section */
         .roadmap-container {
             position: relative;
-            margin-top: 5rem;
+            margin-top: 3rem;
+            text-align: center;
         }
         
         .roadmap-line {
@@ -341,8 +360,9 @@
         .roadmap-item {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 7rem;
+            margin-bottom: 5rem;
             position: relative;
+            text-align: center;
         }
         
         .roadmap-item:nth-child(odd) {
@@ -352,12 +372,13 @@
         .roadmap-content {
             width: 45%;
             background-color: var(--charcoal-grey);
-            padding: 3rem;
+            padding: 2rem;
             border-radius: 15px;
             position: relative;
             z-index: 2;
             border: 1px solid rgba(255, 215, 0, 0.1);
             transition: all 0.3s ease;
+            text-align: center;
         }
         
         .roadmap-content:hover {
@@ -381,11 +402,13 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 3;
+            text-align: center;
         }
         
         .roadmap-title {
             color: var(--gold);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
         }
         
         .roadmap-empty {
@@ -397,16 +420,18 @@
             display: flex;
             justify-content: center;
             width: 100%;
-            margin: 5rem 0;
+            margin: 3rem 0;
+            text-align: center;
         }
         
         .meme-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5rem;
+            gap: 4rem;
             flex-wrap: wrap;
             max-width: 1000px;
+            text-align: center;
         }
         
         .meme-image {
@@ -414,7 +439,6 @@
             min-width: 300px;
             max-width: 500px;
             text-align: center;
-            margin-bottom: 2rem;
         }
         
         .meme-image img {
@@ -429,13 +453,15 @@
             flex: 1;
             min-width: 300px;
             max-width: 500px;
-            padding: 0 1.5rem;
+            padding: 0 1rem;
+            text-align: center;
         }
         
         .meme-text h3 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
             color: var(--white);
+            text-align: center;
         }
         
         .bounce {
@@ -447,20 +473,34 @@
             50% { transform: translateY(-15px); }
         }
         
+        @media (max-width: 768px) {
+            .meme-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .meme-image, .meme-text {
+                text-align: center;
+            }
+        }
+        
         /* Community Section */
         .community-container {
             width: 100%;
             display: flex;
             justify-content: center;
-            margin: 5rem 0;
+            margin: 3rem 0;
+            text-align: center;
         }
         
         .community-row {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 4rem;
+            gap: 3rem;
             max-width: 800px;
+            text-align: center;
         }
         
         .community-link {
@@ -469,7 +509,7 @@
             align-items: center;
             text-decoration: none;
             transition: all 0.3s ease;
-            width: 120px;
+            width: 100px;
             text-align: center;
         }
         
@@ -478,15 +518,15 @@
         }
         
         .community-icon {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
             background-color: var(--charcoal-grey);
             border-radius: 50%;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
             color: var(--white);
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 215, 0, 0.2);
@@ -503,7 +543,6 @@
             font-weight: 500;
             width: 100%;
             text-align: center;
-            font-size: 1.1rem;
         }
         
         /* Call to Action */
@@ -511,8 +550,8 @@
             text-align: center;
             background: linear-gradient(135deg, rgba(31, 31, 31, 0.9), rgba(13, 13, 13, 0.9));
             border-radius: 20px;
-            padding: 5rem 3rem;
-            margin-top: 5rem;
+            padding: 4rem 2rem;
+            margin-top: 4rem;
             border: 1px solid rgba(255, 215, 0, 0.1);
             position: relative;
             overflow: hidden;
@@ -529,24 +568,27 @@
         }
         
         .cta h2 {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
         
         .cta .lead {
-            margin: 0 auto 3rem;
+            margin: 0 auto 2.5rem;
+            text-align: center;
         }
         
         .cta-buttons {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
+            text-align: center;
         }
         
         .secondary-button {
             background-color: transparent;
             border: 2px solid var(--gold);
-            padding: 0.9rem 1.8rem;
+            padding: 0.8rem 1.5rem;
             border-radius: 50px;
             color: var(--gold);
             font-weight: 600;
@@ -563,48 +605,55 @@
         
         /* Footer */
         footer {
-            padding: 6rem 0 3rem;
+            padding: 4rem 0 2rem;
             background-color: rgba(0, 0, 0, 0.3);
             position: relative;
+            text-align: center;
         }
         
         .footer-content {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 4rem;
+            gap: 3rem;
+            text-align: center;
         }
         
         .footer-logo {
             flex: 1;
             min-width: 250px;
+            text-align: center;
         }
         
         .footer-links {
             flex: 1;
             min-width: 250px;
+            text-align: center;
         }
         
         .footer-title {
             color: var(--gold);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             font-size: 1.3rem;
+            text-align: center;
         }
         
         .footer-nav {
             list-style: none;
+            text-align: center;
         }
         
         .footer-nav li {
-            margin-bottom: 1.2rem;
+            margin-bottom: 0.8rem;
+            text-align: center;
         }
         
         .footer-nav a {
             color: var(--light-grey);
             text-decoration: none;
             transition: color 0.3s ease;
-            font-size: 1.05rem;
+            text-align: center;
         }
         
         .footer-nav a:hover {
@@ -613,20 +662,22 @@
         
         .copyright {
             text-align: center;
-            margin-top: 5rem;
+            margin-top: 4rem;
             color: var(--light-grey);
             font-size: 0.9rem;
         }
         
         .socials {
             display: flex;
-            gap: 1.5rem;
-            margin-top: 2rem;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+            text-align: center;
         }
         
         .social-icon {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -649,11 +700,11 @@
         }
         
         .mb-2 {
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
         }
         
         .mt-2 {
-            margin-top: 2.5rem;
+            margin-top: 2rem;
         }
         
         /* Media Queries */
@@ -672,27 +723,6 @@
             
             .nav-links {
                 display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: var(--rich-black);
-                padding: 1.5rem;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            }
-            
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .menu-toggle {
-                display: block;
-                background: none;
-                border: none;
-                color: var(--white);
-                font-size: 1.5rem;
-                cursor: pointer;
             }
             
             .roadmap-line {
@@ -702,11 +732,12 @@
             .roadmap-item, .roadmap-item:nth-child(odd) {
                 flex-direction: column;
                 padding-left: 50px;
+                text-align: center;
             }
             
             .roadmap-content {
                 width: 100%;
-                padding: 2rem;
+                text-align: center;
             }
             
             .roadmap-empty {
@@ -721,33 +752,8 @@
             
             .hero-content {
                 flex-direction: column-reverse;
-                gap: 3rem;
-            }
-            
-            section {
-                padding: 5rem 0;
-            }
-            
-            .container {
-                padding: 0 1.5rem;
-            }
-            
-            .feature-card, .token-stat, .roadmap-content {
-                padding: 2rem;
-            }
-            
-            .community-row {
-                gap: 2.5rem;
-            }
-            
-            .cta {
-                padding: 3rem 1.5rem;
-            }
-        }
-        
-        @media (min-width: 769px) {
-            .menu-toggle {
-                display: none;
+                gap: 2rem;
+                text-align: center;
             }
         }
         
@@ -762,43 +768,19 @@
             animation: pulse 2s infinite ease-in-out;
         }
         
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease, transform 1s ease;
+            animation: fadeIn 1s forwards;
         }
         
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--gold);
-            color: var(--rich-black);
-            border: none;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            z-index: 1000;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
-        }
-        
-        .back-to-top.visible {
-            display: block;
-        }
-        
-        /* Focus Styles for Accessibility */
-        a:focus, button:focus {
-            outline: 2px solid var(--gold);
-            outline-offset: 2px;
-        }
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 0.9s; }
     </style>
 </head>
 <body>
@@ -806,10 +788,9 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="assets/chango-logo.png" alt="Chango Logo">
+                    <img src="assets/chango-logo.png" alt="Chango Logo"> 
                     <span class="logo-text">$CHANGE</span>
                 </div>
-                <button class="menu-toggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
                 <nav class="nav-links">
                     <a href="#features">Features</a>
                     <a href="#tokenomics">Tokenomics</a>
@@ -833,7 +814,7 @@
                         <a href="#features" class="secondary-button">Learn More</a>
                     </div>
                 </div>
-                <div class="hero-image fade-in">
+                <div class="hero-image fade-in delay-1">
                     <div class="glow"></div>
                     <img src="assets/chango-logo.png" alt="Chango, the golden piggy bank with laser eyes">
                 </div>
@@ -855,7 +836,7 @@
                     <p>Built on Solana's high-performance blockchain, $CHANGE transactions complete in seconds with minimal fees.</p>
                 </div>
                 
-                <div class="feature-card fade-in">
+                <div class="feature-card fade-in delay-1">
                     <div class="feature-icon">
                         <i class="fas fa-users"></i>
                     </div>
@@ -863,7 +844,7 @@
                     <p>No VCs, no pre-sales. $CHANGE is owned by the community from day one. True decentralization as it should be.</p>
                 </div>
                 
-                <div class="feature-card fade-in">
+                <div class="feature-card fade-in delay-2">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
@@ -871,7 +852,7 @@
                     <p>Liquidity locked. Contract renounced. Built by crypto veterans who've been through the cycles.</p>
                 </div>
                 
-                <div class="feature-card fade-in">
+                <div class="feature-card fade-in delay-3">
                     <div class="feature-icon">
                         <i class="fas fa-rocket"></i>
                     </div>
@@ -895,17 +876,17 @@
                     <div class="token-stat-label">Total Supply</div>
                 </div>
                 
-                <div class="token-stat fade-in">
+                <div class="token-stat fade-in delay-1">
                     <div class="token-stat-value">60%</div>
                     <div class="token-stat-label">Initial Liquidity</div>
                 </div>
                 
-                <div class="token-stat fade-in">
+                <div class="token-stat fade-in delay-2">
                     <div class="token-stat-value">20%</div>
                     <div class="token-stat-label">Community Treasury</div>
                 </div>
                 
-                <div class="token-stat fade-in">
+                <div class="token-stat fade-in delay-3">
                     <div class="token-stat-value">0%</div>
                     <div class="token-stat-label">Team Allocation</div>
                 </div>
@@ -926,24 +907,6 @@
             
             <div class="roadmap-container">
                 <div class="roadmap-line"></div>
-                
-                <div class="roadmap-item">
-                    <div class="roadmap-content fade-in">
-                        <div class="roadmap-date">Q2 2025</div>
-                        <h3 class="roadmap-title">Launch Phase</h3>
-                        <p>Fair token launch on Solana. Community building. Initial DEX listings. Marketing partnerships.</p>
-                    </div>
-                    <div class="roadmap-empty"></div>
-                </div>
-                
-                <div class="roadmap-item">
-                    <div class="roadmap-content fade-in">
-                        <div class="roadmap-date">Q3 2025</div>
-                        <h3 class="roadmap-title">Growth Phase</h3>
-                        <p>Major CEX listings. Expanded marketing campaigns. First community governance votes. Chango NFT collection.</p>
-                    </div>
-                    <div class="roadmap-empty"></div>
-                </div>
                 
                 <div class="roadmap-item">
                     <div class="roadmap-content fade-in">
@@ -968,92 +931,80 @@
 
     <div class="divider"></div>
 
-    <section id="community">
+    <section id="meme">
         <div class="container">
             <div class="text-center">
-                <h2 class="fade-in">Join the $CHANGE Revolution</h2>
-                <p class="lead fade-in">This isn't just a coin. It's a call to action for the underdogs, the dreamers, and the meme warriors.</p>
+                <h2 class="fade-in">Chango to the Moon!</h2>
+                <p class="lead fade-in">Building wealth isn't just about finance — it's about having fun along the way.</p>
             </div>
             
-            <div class="community-container">
-                <div class="community-row">
-                    <a href="https://pocketchange.money" class="community-link fade-in">
-                        <div class="community-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <span class="community-name">Website</span>
-                    </a>
-                    
-                    <a href="#" class="community-link fade-in">
-                        <div class="community-icon">
-                            <i class="fab fa-twitter"></i>
-                        </div>
-                        <span class="community-name">Twitter</span>
-                    </a>
-                    
-                    <a href="#" class="community-link fade-in">
-                        <div class="community-icon">
-                            <i class="fab fa-telegram"></i>
-                        </div>
-                        <span class="community-name">Telegram</span>
-                    </a>
-                    
-                    <a href="#" class="community-link fade-in">
-                        <div class="community-icon">
-                            <i class="fab fa-discord"></i>
-                        </div>
-                        <span class="community-name">Discord</span>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="cta">
-                <div class="cta-glow"></div>
-                <h2>Ready for $CHANGE?</h2>
-                <p class="lead">In a world that worships dollars and debt, we choose $CHANGE — because sometimes, a little can become a lot.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="cta-button">Buy Now</a>
-                    <a href="#" class="secondary-button">Join Community</a>
+            <div class="meme-wrapper">
+                <div class="meme-content">
+                    <div class="meme-image fade-in">
+                        <img src="assets/to-the-moon.png" alt="Chango riding a rocket to the moon" class="bounce">
+                    </div>
+                    <div class="meme-text fade-in delay-1">
+                        <h3>Not just a meme coin. A <span class="accent">movement</span>.</h3>
+                        <p>While other projects promise the moon, Chango is already on his way there. With laser eyes locked on the target and riding the Solana rocket, nothing can stop this golden piggy from bringing $CHANGE to the masses.</p>
+                        <a href="#" class="secondary-button mt-2">Share Meme</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <button class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+    <div class="divider"></div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <img src="assets/chango-logo.png" alt="Chango Logo">
+                        <span class="logo-text">$CHANGE</span>
+                    </div>
+                    <p class="mt-2">$CHANGE is a meme token created for entertainment, community-building, and speculative use. It is not a registered security, investment product, or financial instrument.</p>
+                    <div class="socials">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#tokenomics">Tokenomics</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="#community">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#">Whitepaper</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Contract</a></li>
+                        <li><a href="#">Audit</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 $CHANGE. All rights reserved.</p>
+                <p class="text-muted mt-2">Disclaimer: $CHANGE is a meme token created for entertainment, community-building, and speculative use. It is not a registered security, investment product, or financial instrument. Participation is at your own risk. Do your own research (DYOR). No promises, just vibes and potential.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Fade-in Animations with Intersection Observer
-        const fadeElements = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        fadeElements.forEach(element => observer.observe(element));
-
-        // Back to Top Button
-        const backToTop = document.querySelector('.back-to-top');
-        window.addEventListener('scroll', () => {
-            backToTop.classList.toggle('visible', window.scrollY > 300);
-        });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Smooth Scrolling for Anchor Links
+        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
+                
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
                     window.scrollTo({
@@ -1063,9 +1014,28 @@
                 }
             });
         });
-
-        // Header Scroll Effect
+        
+        // Fade in animations on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.style.opacity = '1';
+                }
+            });
+        };
+        
+        // Initial check and add scroll event
+        fadeInOnScroll();
+        window.addEventListener('scroll', fadeInOnScroll);
+        
+        // Header scroll effect
         const header = document.querySelector('header');
+        
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
                 header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
@@ -1078,3 +1048,21 @@
     </script>
 </body>
 </html>
+                    <div class="roadmap-content fade-in">
+                        <div class="roadmap-date">Q2 2025</div>
+                        <h3 class="roadmap-title">Launch Phase</h3>
+                        <p>Fair token launch on Solana. Community building. Initial DEX listings. Marketing partnerships.</p>
+                    </div>
+                    <div class="roadmap-empty"></div>
+                </div>
+                
+                <div class="roadmap-item">
+                    <div class="roadmap-content fade-in">
+                        <div class="roadmap-date">Q3 2025</div>
+                        <h3 class="roadmap-title">Growth Phase</h3>
+                        <p>Major CEX listings. Expanded marketing campaigns. First community governance votes. Chango NFT collection.</p>
+                    </div>
+                    <div class="roadmap-empty"></div>
+                </div>
+                
+                <div class="roadmap-item">
